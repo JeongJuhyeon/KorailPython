@@ -1,6 +1,7 @@
 import korail2 as Korail
 import time as Time
 from flask import Flask, jsonify
+import logging
 
 DEFAULT_TIME = '200000'
 DELAY_SEC = 0.05
@@ -11,6 +12,10 @@ line_kyeongjeon = ['진주', '마산', '창원', '창원중앙', '진영', '밀�
 app = Flask(__name__)
 korail = Korail.Korail("12345678", "YOUR_PASSWORD", auto_login=False)
 
+if __name__ != '__main__':
+    gunicorn_logger = logging.getLogger('gunicorn.error')
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)
 
 def find_route(station1, station2):
     station1_index = line_kyeongjeon.index(station1)
@@ -107,10 +112,14 @@ def find_ticket(station1, station2):
 
 @app.route('/ticket/<station1>/<station2>')
 def find_ticket_string(station1, station2):
+    app.logger.info("Ticket request received: " + station1 + "-" + station2)
     ticket = find_ticket(station1, station2)
     return jsonify({'tickets': str(ticket[0]) + str(ticket[1])})
 
 
 if __name__ == '__main__':
     # print(find_ticket('동대구', '서울'))
+    gunicorn_logger = logging.getLogger('gunicorn.error')
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)
     app.run(debug=True, host='0.0.0.0')
