@@ -119,7 +119,4 @@ def find_ticket_string(station1, station2):
 
 if __name__ == '__main__':
     # print(find_ticket('동대구', '서울'))
-    gunicorn_logger = logging.getLogger('gunicorn.error')
-    app.logger.handlers = gunicorn_logger.handlers
-    app.logger.setLevel(gunicorn_logger.level)
     app.run(debug=True, host='0.0.0.0')

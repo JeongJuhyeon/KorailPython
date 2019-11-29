@@ -4,7 +4,6 @@
     <list default="true" id="ef0aa1c1-ce54-42d4-9672-d5530021b543" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/TicketSearchFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/TicketSearchFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" />
     </list>
@@ -81,7 +80,7 @@
       <workItem from="1575010394025" duration="524000" />
       <workItem from="1575014667004" duration="2305000" />
       <workItem from="1575031140269" duration="2392000" />
-      <workItem from="1575039499811" duration="3008000" />
+      <workItem from="1575039499811" duration="3102000" />
     </task>
     <servers />
   </component>
