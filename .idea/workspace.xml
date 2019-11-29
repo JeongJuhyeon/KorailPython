@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ef0aa1c1-ce54-42d4-9672-d5530021b543" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/TicketSearchFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/TicketSearchFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1TpTSYUlGBAQYyQoQIVbF21F8Sr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -78,7 +81,7 @@
       <workItem from="1575010394025" duration="524000" />
       <workItem from="1575014667004" duration="2305000" />
       <workItem from="1575031140269" duration="2392000" />
-      <workItem from="1575039499811" duration="1147000" />
+      <workItem from="1575039499811" duration="1498000" />
     </task>
     <servers />
   </component>
