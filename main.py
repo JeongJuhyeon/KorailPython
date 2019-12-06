@@ -107,8 +107,10 @@ def find_ticket(station1, station2, date=DEFAULT_DATE, time=DEFAULT_TIME):
         return direct_train
     elif indirect_trains and not direct_train:
         return indirect_trains
-    else:
+    elif indirect_trains and direct_train:
         return get_earliest_train([(direct_train, None), indirect_trains])
+    else:
+        return ()
 
 @app.route('/ticket/<station1>/<station2>/<date>/<time>')
 def ticket_get_request(station1, station2, date, time):
