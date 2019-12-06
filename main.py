@@ -102,7 +102,7 @@ def find_direct_ticket(station1, station2, date=DEFAULT_DATE, time=DEFAULT_TIME)
 
 def find_ticket(station1, station2, date=DEFAULT_DATE, time=DEFAULT_TIME):
     direct_train = find_direct_ticket(station1, station2, date, time)
-    indirect_trains = find_indirect_ticket_for_route(find_route(station1, station2))
+    indirect_trains = find_indirect_ticket_for_route(find_route(station1, station2), date, time)
     if direct_train and not indirect_trains:
         return direct_train
     elif indirect_trains and not direct_train:
