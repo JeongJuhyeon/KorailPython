@@ -4,7 +4,6 @@
     <list default="true" id="ef0aa1c1-ce54-42d4-9672-d5530021b543" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/TicketSearchFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/TicketSearchFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +86,7 @@
       <workItem from="1575039499811" duration="3794000" />
       <workItem from="1575465783468" duration="150000" />
       <workItem from="1575609644921" duration="1216000" />
-      <workItem from="1575611867010" duration="7197000" />
+      <workItem from="1575611867010" duration="7687000" />
     </task>
     <servers />
   </component>
@@ -167,7 +166,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>129</line>
+          <line>130</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>

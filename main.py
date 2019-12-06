@@ -125,7 +125,8 @@ def class_object_to_dict(train):
 
 def get_ticket_result(tickets):
     if len(tickets)==1 or (len(tickets)==2 and not tickets[1]):
-        ticket_result = {'isIndirect':False, 'tickets':class_object_to_dict(tickets[0]) }
+        # Giving list two elements so that Android can cast it to JSONArray, not possible with single element
+        ticket_result = {'isIndirect':False, 'tickets':[class_object_to_dict(tickets[0]), '']}
     elif len(tickets)==2:
         ticket_result = {'isIndirect':True, 'tickets':[class_object_to_dict(tickets[0]),class_object_to_dict(tickets[1])]}
     elif len(tickets)==0:
