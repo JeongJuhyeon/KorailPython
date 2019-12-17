@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef0aa1c1-ce54-42d4-9672-d5530021b543" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/ResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/ResultActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/SelectTimeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/SelectTimeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/TicketSearchFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/java/kr/jjh/korailticketfinder/TicketSearchFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/layout/activity_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/layout/activity_result.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/layout/activity_select_time.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/layout/activity_select_time.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/layout/fragment_ticket_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/layout/fragment_ticket_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/layout/item_ticket.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/KorailTicketFinder/app/src/main/res/layout/item_ticket.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +93,11 @@
       <workItem from="1575039499811" duration="3794000" />
       <workItem from="1575465783468" duration="150000" />
       <workItem from="1575609644921" duration="1216000" />
-      <workItem from="1575611867010" duration="8190000" />
+      <workItem from="1575611867010" duration="9099000" />
+      <workItem from="1575715799414" duration="571000" />
+      <workItem from="1576555632710" duration="1226000" />
+      <workItem from="1576563893557" duration="4910000" />
+      <workItem from="1576617720646" duration="3614000" />
     </task>
     <servers />
   </component>
@@ -106,46 +118,55 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="775" y="372" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575618860022">
+    <state x="775" y="372" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575716364501">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="775" y="372" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1575618860022" />
-    <state width="1807" height="277" key="GridCell.Tab.0.bottom" timestamp="1575631322376">
+    <state x="775" y="372" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1575716364501" />
+    <state width="1874" height="286" key="GridCell.Tab.0.bottom" timestamp="1576598893058">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="286" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576598893058" />
+    <state width="1807" height="343" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1575632082136" />
+    <state width="1874" height="286" key="GridCell.Tab.0.center" timestamp="1576598893057">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="286" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576598893057" />
+    <state width="1807" height="343" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1575632082135" />
+    <state width="1874" height="286" key="GridCell.Tab.0.left" timestamp="1576598893057">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="286" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576598893057" />
+    <state width="1807" height="343" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1575632082135" />
+    <state width="1874" height="286" key="GridCell.Tab.0.right" timestamp="1576598893057">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="286" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576598893057" />
+    <state width="1807" height="343" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1575632082135" />
+    <state width="1807" height="343" key="GridCell.Tab.1.bottom" timestamp="1575632082136">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1575631322376" />
-    <state width="1807" height="277" key="GridCell.Tab.0.center" timestamp="1575631322375">
+    <state width="1807" height="343" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1575632082136" />
+    <state width="1807" height="343" key="GridCell.Tab.1.center" timestamp="1575632082136">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1575631322375" />
-    <state width="1807" height="277" key="GridCell.Tab.0.left" timestamp="1575631322375">
+    <state width="1807" height="343" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1575632082136" />
+    <state width="1807" height="343" key="GridCell.Tab.1.left" timestamp="1575632082136">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1575631322375" />
-    <state width="1807" height="277" key="GridCell.Tab.0.right" timestamp="1575631322375">
+    <state width="1807" height="343" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1575632082136" />
+    <state width="1807" height="343" key="GridCell.Tab.1.right" timestamp="1575632082136">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1575631322375" />
-    <state width="1807" height="343" key="GridCell.Tab.1.bottom" timestamp="1575614551357">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state width="1807" height="343" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1575632082136" />
+    <state x="449" y="173" key="SettingsEditor" timestamp="1576617854564">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1807" height="343" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1575614551357" />
-    <state width="1807" height="343" key="GridCell.Tab.1.center" timestamp="1575614551356">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="449" y="173" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1576617854564" />
+    <state x="388" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1576617721452">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1807" height="343" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1575614551356" />
-    <state width="1807" height="343" key="GridCell.Tab.1.left" timestamp="1575614551356">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state width="1807" height="343" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1575614551356" />
-    <state width="1807" height="343" key="GridCell.Tab.1.right" timestamp="1575614551356">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state width="1807" height="343" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1575614551356" />
-    <state x="441" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1575611867276">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="441" y="354" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1575611867276" />
+    <state x="388" y="354" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576617721452" />
+    <state x="441" y="354" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1575715800862" />
     <state x="744" y="235" width="488" height="635" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575612669579">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -154,6 +175,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="639" y="290" width="707" height="648" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1575618865416" />
+    <state x="704" y="182" width="501" height="713" key="refactoring.ChangeSignatureDialog" timestamp="1576625069870">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="704" y="182" width="501" height="713" key="refactoring.ChangeSignatureDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576625069870" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -162,11 +187,6 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>39</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>129</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -178,6 +198,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/KoailPython$main.coverage" NAME="main Coverage Results" MODIFIED="1575032780045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/KorailPython$main.coverage" NAME="main Coverage Results" MODIFIED="1575631322357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KorailPython$main.coverage" NAME="main Coverage Results" MODIFIED="1576572646595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

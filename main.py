@@ -53,7 +53,7 @@ def find_indirect_ticket_for_route(route, date=DEFAULT_DATE, time=DEFAULT_TIME):
     if not train_tuples:
         return ()
 
-    return get_earliest_train(train_tuples)
+    return get_earliest_departing_train(train_tuples)
 
 
 def get_earliest_train_with_seat(train_list):
@@ -66,10 +66,10 @@ def get_earliest_train_with_seat(train_list):
     if not train_tuples:
         return []
 
-    return get_earliest_train(train_tuples)
+    return get_earliest_departing_train(train_tuples)
 
 
-def get_earliest_train(train_tuples):
+def get_earliest_departing_train(train_tuples):
     earliest_train_tuple = train_tuples[0]
     earliest_train_time = convert_train_time(earliest_train_tuple[0])
     for train_tuple in train_tuples[1:]:
@@ -79,9 +79,28 @@ def get_earliest_train(train_tuples):
             earliest_train_tuple = train_tuple
     return earliest_train_tuple
 
+def get_earliest_arriving_train(train_tuples):
+    # Set minimum to first tuple
+    earliest_train_tuple = train_tuples[0]
+    if train_tuples[0][1] is not None:
+        earliest_train_time = convert_train_time(earliest_train_tuple[1], departure=False)
+    else:
+        earliest_train_time = convert_train_time(earliest_train_tuple[0], departure=False)
 
-def convert_train_time(train):
-    return int(train.dep_date + train.dep_time)
+    for train_tuple in train_tuples[1:]:
+        idx = 0 if train_tuple[1] is not None else 0
+
+        train_time = convert_train_time(train_tuple[idx], departure=False)
+        if train_time < earliest_train_time:
+            earliest_train_time = train_time
+            earliest_train_tuple = train_tuple
+    return earliest_train_tuple
+
+def convert_train_time(train, departure=True):
+    if departure:
+        return int(train.dep_date + train.dep_time)
+    else:
+        return int(train.arr_date + train.arr_time)
 
 # Don't need route cause don't have to know intermediate stations
 def find_direct_ticket(station1, station2, date=DEFAULT_DATE, time=DEFAULT_TIME):
@@ -108,16 +127,10 @@ def find_ticket(station1, station2, date=DEFAULT_DATE, time=DEFAULT_TIME):
     elif indirect_trains and not direct_train:
         return indirect_trains
     elif indirect_trains and direct_train:
-        return get_earliest_train([(direct_train, None), indirect_trains])
+        return get_earliest_departing_train([(direct_train, None), indirect_trains])
     else:
         return ()
 
-@app.route('/ticket/<station1>/<station2>/<date>/<time>')
-def ticket_get_request(station1, station2, date, time):
-    app.logger.info("Ticket request received: " + station1 + "-" + station2)
-    tickets = find_ticket(station1, station2, date, time)
-    ticketResult = get_ticket_result(tickets)
-    return jsonify(ticketResult)
 
 def class_object_to_dict(train):
     return dict(
@@ -135,6 +148,14 @@ def get_ticket_result(tickets):
     return ticket_result
 
 
+@app.route('/ticket/<station1>/<station2>/<date>/<time>')
+def ticket_get_request(station1, station2, date, time):
+    app.logger.info("Ticket request received: " + station1 + "-" + station2)
+    tickets = find_ticket(station1, station2, date, time)
+    ticketResult = get_ticket_result(tickets)
+    return jsonify(ticketResult)
+
 if __name__ == '__main__':
-    print(find_ticket('동대구', '서울'))
-    app.run(debug=True, host='0.0.0.0')
+    # print(find_ticket('동대구', '서울'))
+    app.run(threaded=True)
+
