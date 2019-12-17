@@ -3,9 +3,9 @@ import time as Time
 from flask import Flask, jsonify
 import logging
 
-DEFAULT_TIME = '200000'
+DEFAULT_TIME = '120000'
 DELAY_SEC = 0.05
-DEFAULT_DATE = '20191122'
+DEFAULT_DATE = '20191222'
 
 
 line_kyeongjeon = ['진주', '마산', '창원', '창원중앙', '진영', '밀양', '동대구', '김천구미', '대전', '오송', '천안아산', '광명', '서울', '행신']
@@ -33,16 +33,18 @@ def find_indirect_ticket_for_route(route, date=DEFAULT_DATE, time=DEFAULT_TIME):
     for station in route[1:-1]:
         try:
             train1 = get_earliest_train_with_seat(
-                korail.search_train(route[0], station, train_type=Korail.TrainType.KTX, date=date, time=time,
+                korail.search_train(route[0], station,  date=date, time=time,
                                     include_no_seats=True))[0]
+
             Time.sleep(DELAY_SEC)
             if not train1.has_general_seat():
                 continue
 
-            train2 = korail.search_train(station, route[-1], train_type=Korail.TrainType.KTX, date=train1.arr_date,
+            train2 = korail.search_train(station, route[-1], date=train1.arr_date,
                                          time=train1.arr_time, include_no_seats=True)[0]
             Time.sleep(DELAY_SEC)
-            if not train2.has_general_seat():
+            if not train2.has_general_seat() or (3 <= int(train2.dep_time) / 100 - int(train1.arr_time) <= 5 and
+                                                 train1.train_no != train2.train_no):
                 continue
 
             else:
@@ -53,7 +55,7 @@ def find_indirect_ticket_for_route(route, date=DEFAULT_DATE, time=DEFAULT_TIME):
     if not train_tuples:
         return ()
 
-    return get_earliest_departing_train(train_tuples)
+    return get_earliest_arriving_train(train_tuples)
 
 
 def get_earliest_train_with_seat(train_list):
@@ -88,7 +90,7 @@ def get_earliest_arriving_train(train_tuples):
         earliest_train_time = convert_train_time(earliest_train_tuple[0], departure=False)
 
     for train_tuple in train_tuples[1:]:
-        idx = 0 if train_tuple[1] is not None else 0
+        idx = 1 if train_tuple[1] is not None else 0
 
         train_time = convert_train_time(train_tuple[idx], departure=False)
         if train_time < earliest_train_time:
@@ -106,7 +108,7 @@ def convert_train_time(train, departure=True):
 def find_direct_ticket(station1, station2, date=DEFAULT_DATE, time=DEFAULT_TIME):
     try:
         train = get_earliest_train_with_seat(
-            korail.search_train(station1, station2, train_type=Korail.TrainType.KTX, date=date, time=time,
+            korail.search_train(station1, station2, date=date, time=time,
                                 include_no_seats=True))[0]
         Time.sleep(DELAY_SEC)
         if not train.has_general_seat():
@@ -127,7 +129,7 @@ def find_ticket(station1, station2, date=DEFAULT_DATE, time=DEFAULT_TIME):
     elif indirect_trains and not direct_train:
         return indirect_trains
     elif indirect_trains and direct_train:
-        return get_earliest_departing_train([(direct_train, None), indirect_trains])
+        return get_earliest_arriving_train([(direct_train, None), indirect_trains])
     else:
         return ()
 
