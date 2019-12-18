@@ -32,9 +32,8 @@ def find_indirect_ticket_for_route(route, date=DEFAULT_DATE, time=DEFAULT_TIME):
 
     for station in route[1:-1]:
         try:
-            train1 = get_earliest_train_with_seat(
-                korail.search_train(route[0], station,  date=date, time=time,
-                                    include_no_seats=True))[0]
+            train1 = get_earliest_train_with_seat(korail.search_train(route[0], station, date=date, time=time,
+                                                                      include_no_seats=True))[0]
 
             Time.sleep(DELAY_SEC)
             if not train1.has_general_seat():
@@ -58,7 +57,7 @@ def find_indirect_ticket_for_route(route, date=DEFAULT_DATE, time=DEFAULT_TIME):
     return get_earliest_arriving_train(train_tuples)
 
 
-def get_earliest_train_with_seat(train_list):
+def get_earliest_train_with_seat(train_list, indirect=True):
     train_tuples = []
 
     for train in train_list:
@@ -68,7 +67,10 @@ def get_earliest_train_with_seat(train_list):
     if not train_tuples:
         return []
 
-    return get_earliest_departing_train(train_tuples)
+    if indirect:
+        return get_earliest_departing_train(train_tuples)
+    else:
+        return get_earliest_arriving_train(train_tuples)
 
 
 def get_earliest_departing_train(train_tuples):
@@ -107,9 +109,8 @@ def convert_train_time(train, departure=True):
 # Don't need route cause don't have to know intermediate stations
 def find_direct_ticket(station1, station2, date=DEFAULT_DATE, time=DEFAULT_TIME):
     try:
-        train = get_earliest_train_with_seat(
-            korail.search_train(station1, station2, date=date, time=time,
-                                include_no_seats=True))[0]
+        train = get_earliest_train_with_seat(korail.search_train(station1, station2, date=date, time=time,
+                                                                 include_no_seats=True), indirect=False)[0]
         Time.sleep(DELAY_SEC)
         if not train.has_general_seat():
             return None
