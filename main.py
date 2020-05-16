@@ -3,12 +3,18 @@ import time as Time
 from flask import Flask, jsonify
 import logging
 
-DEFAULT_TIME = '120000'
+DEFAULT_TIME = '215000'
 DELAY_SEC = 0.05
-DEFAULT_DATE = '20191222'
+DEFAULT_DATE = '20200105'
 
 
-line_kyeongjeon = ['진주', '마산', '창원', '창원중앙', '진영', '밀양', '동대구', '김천구미', '대전', '오송', '천안아산', '광명', '서울', '행신']
+line_gyeongjeon = ['진주', '마산', '창원', '창원중앙', '진영', '밀양', '동대구', '김천구미', '대전', '오송', '천안아산', '광명', '서울', '행신']
+line_gyeongbu = ['부산', '울산', '신경주', '동대구', '김천구미', '대전', '오송', '천안아산', '광명', '서울', '행신'] #'부산', '울산', '신경주'
+line_honam = ['목포', '나주', '광주송정','정읍', '익산', '오송', '천안아산', '광명', '용산', '서울', '행신'] #'용산', ''목포', '나주', '광주송정','정읍', '익산''
+line_donghae = ['포항', '동대구', '김천구미', '대전', '오송', '천안아산', '광명', '서울', '행신'] #'포항'
+line_jeolla = ['여수엑스포', '여천', '순천', '곡성', '남원', '전주', '익산', '오송', '천안아산', '광명', '용산', '서울', '행신']
+line_gangneung = ['강릉', '진부', '평창', '둔내', '횡성', '만종', '양평', '상봉', '청량리', '서울']
+lines = [line_gyeongbu, line_gyeongjeon, line_gangneung, line_jeolla, line_honam, line_donghae]
 
 app = Flask(__name__)
 korail = Korail.Korail("12345678", "YOUR_PASSWORD", auto_login=False)
@@ -18,13 +24,19 @@ if __name__ != '__main__':
     app.logger.handlers = gunicorn_logger.handlers
     app.logger.setLevel(gunicorn_logger.level)
 
+def find_line(station1, station2):
+    for line in lines:
+        if station1 in line and station2 in line:
+            return line
+
 def find_route(station1, station2):
-    station1_index = line_kyeongjeon.index(station1)
-    station2_index = line_kyeongjeon.index(station2)
+    train_line = find_line(station1, station2)
+    station1_index = train_line.index(station1)
+    station2_index = train_line.index(station2)
     if (station1_index < station2_index):
-        return line_kyeongjeon[station1_index:station2_index + 1]
+        return train_line[station1_index:station2_index + 1]
     elif (station2_index < station1_index):
-        return list(reversed(line_kyeongjeon[station2_index:station1_index + 1]))
+        return list(reversed(train_line[station2_index:station1_index + 1]))
 
 # Need route cause need to know intermediate stations
 def find_indirect_ticket_for_route(route, date=DEFAULT_DATE, time=DEFAULT_TIME):
@@ -159,6 +171,6 @@ def ticket_get_request(station1, station2, date, time):
     return jsonify(ticketResult)
 
 if __name__ == '__main__':
-    # print(find_ticket('동대구', '서울'))
-    app.run(threaded=True)
+    print(find_ticket('목포', '서울'))
+    # app.run(threaded=True)
 
